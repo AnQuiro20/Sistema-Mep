@@ -12,6 +12,7 @@ next-env.d.ts
 # environment files may hold secrets; never track them
 .env
 .env.*
+!.env.example
 
 # logs and OS files
 npm-debug.log*
