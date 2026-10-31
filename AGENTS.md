@@ -37,7 +37,7 @@ Technical configuration cannot add, remove, or reinterpret product requirements.
 - **Application stack required by AG-001:** Next.js with strict TypeScript.
 - **Database direction:** PostgreSQL is preferred and may change only through an approved ADR and explicit decision.
 - **Undecided providers:** authentication, billing, remote configuration, hosting, storage, queues, observability, and other vendors remain unselected until their story or an approved ADR decides them.
-- **Source layout and application commands:** Next.js App Router under `src/app/`; npm scripts `dev`, `build`, `start`, `typecheck`, `lint`, and `verify` are declared in `package.json`. TypeScript is pinned to 6.x because `typescript-eslint` does not yet support 7.
+- **Source layout and application commands:** Next.js App Router under `src/app/`; domain modules under `src/modules/` (identity, academic, evaluation, reporting, billing) with boundaries in proposed ADR 0001, enforced by ESLint; npm scripts `dev`, `build`, `start`, `typecheck`, `lint`, and `verify` are declared in `package.json`. TypeScript is pinned to 6.x because `typescript-eslint` does not yet support 7.
 
 The three product documents above are authoritative. Read them before planning or implementing a story. Do not invent users, processes, calculations, percentages, legal conclusions, providers, or institutional integrations.
 
