@@ -31,7 +31,11 @@ No environment variables are required yet. Never commit `.env*` files; they are 
 ## Project layout
 
 ```
-src/app/   Next.js App Router (root layout and home page)
+src/app/      Next.js App Router (delivery layer only)
+src/modules/  Domain modules: identity, academic, evaluation, reporting, billing
+docs/adr/     Architecture decision records
 ```
+
+Module boundaries and import rules are defined in `docs/adr/0001-modular-architecture.md` and enforced by `npm run lint`.
 
 Dependencies are pinned to exact versions. Add dependencies with `npm install --save-exact`.
