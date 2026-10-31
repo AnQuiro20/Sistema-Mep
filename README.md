@@ -6,7 +6,7 @@ Product scope, backlog, and user stories live in `Backlog,,userstories y context
 
 ## Requirements
 
-- Node.js `>=20.9.0` (developed with Node 26) and npm 10 or newer.
+- Node.js `>=22.18.0` (CI uses 24; tests run TypeScript natively) and npm 10 or newer.
 
 ## Getting started
 
@@ -19,14 +19,18 @@ No environment variables are required yet. Never commit `.env*` files; they are 
 
 ## Scripts
 
-| Script | Purpose |
-| --- | --- |
-| `npm run dev` | Start the development server |
-| `npm run build` | Create the production build |
-| `npm run start` | Serve the production build (run `build` first) |
-| `npm run typecheck` | Strict TypeScript check without emitting files |
-| `npm run lint` | ESLint (Next.js core-web-vitals + TypeScript rules) |
-| `npm run verify` | `typecheck` followed by `lint` |
+| Script              | Purpose                                             |
+| ------------------- | --------------------------------------------------- |
+| `npm run dev`       | Start the development server                        |
+| `npm run build`     | Create the production build                         |
+| `npm run start`     | Serve the production build (run `build` first)      |
+| `npm run typecheck` | Strict TypeScript check without emitting files      |
+| `npm run lint`      | ESLint (Next.js core-web-vitals + TypeScript rules) |
+| `npm run verify`    | `typecheck` followed by `lint`                      |
+
+## Continuous integration
+
+`.github/workflows/ci.yml` runs on every pull request: format, lint, typecheck, tests, build, dependency audit, and secret detection (gitleaks). `main` must require all three jobs (`quality`, `dependency-scan`, `secret-scan`) with no bypass; see `docs/ci.md`.
 
 ## Project layout
 

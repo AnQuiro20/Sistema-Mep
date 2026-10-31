@@ -23,7 +23,8 @@ const databaseUrl = `postgresql://${TEST_USER}:${TEST_PASSWORD}@127.0.0.1:${TEST
 
 const run = (...args: string[]) =>
   execFileSync("node", args, { env: { ...process.env, DATABASE_URL: databaseUrl }, stdio: "pipe" });
-const migrate = (...args: string[]) => run(MIGRATE_CLI, ...args, "--migrations-dir", MIGRATIONS_DIR);
+const migrate = (...args: string[]) =>
+  run(MIGRATE_CLI, ...args, "--migrations-dir", MIGRATIONS_DIR);
 
 async function sqlStateOf(client: Client, sql: string, values: unknown[] = []) {
   try {
@@ -74,7 +75,10 @@ describe("initial identity schema", () => {
   });
 
   it("rejects an unsupported locale", async () => {
-    const code = await sqlStateOf(client, "INSERT INTO users (display_name, email, locale) VALUES ('X', 'x@example.test', 'fr')");
+    const code = await sqlStateOf(
+      client,
+      "INSERT INTO users (display_name, email, locale) VALUES ('X', 'x@example.test', 'fr')",
+    );
     assert.equal(code, CHECK_VIOLATION);
   });
 

@@ -4,7 +4,7 @@
   "private": true,
   "description": "AulaGestión: web SaaS for individual teachers in Costa Rica.",
   "engines": {
-    "node": ">=20.9.0"
+    "node": ">=22.18.0"
   },
   "scripts": {
     "dev": "next dev",
@@ -17,11 +17,14 @@
     "db:migrate": "node --env-file-if-exists=.env ./node_modules/node-pg-migrate/bin/node-pg-migrate.js up --migrations-dir db/migrations",
     "db:rollback": "node --env-file-if-exists=.env ./node_modules/node-pg-migrate/bin/node-pg-migrate.js down 1 --migrations-dir db/migrations",
     "db:seed": "node --env-file-if-exists=.env db/seed.ts",
-    "test:db": "node --env-file-if-exists=.env --test db/schema.integration.test.ts"
+    "test:db": "npm test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "node --test db/schema.integration.test.ts",
+    "audit:prod": "npm audit --omit=dev --audit-level=high"
   },
   "dependencies": {
     "next": "16.4.3",
-    "node-pg-migrate": "9.0.0",
     "pg": "8.23.1",
     "react": "19.3.1",
     "react-dom": "19.3.1"
@@ -34,6 +37,8 @@
     "embedded-postgres": "17.11.0-beta.19",
     "eslint": "10.14.0",
     "eslint-config-next": "16.4.3",
+    "node-pg-migrate": "9.0.0",
+    "prettier": "3.9.10",
     "typescript": "6.0.3"
   }
 }
