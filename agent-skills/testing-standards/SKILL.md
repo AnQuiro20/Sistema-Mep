@@ -18,6 +18,8 @@ If no runner or convention exists, do not install or invent one unless the activ
 
 ## Required coverage
 
+Keep testing lean: cover only the most important behavior (acceptance criteria, business rules, security boundaries, and regressions). Skip secondary cases and extra verification runs unless the story requires them.
+
 Add focused tests for:
 
 - acceptance criteria with observable behavior;

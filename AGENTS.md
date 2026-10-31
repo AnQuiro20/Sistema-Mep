@@ -85,7 +85,7 @@ Before creating or changing repository content:
 
 ## Git authorization
 
-Creating or editing files does not authorize history or remote changes. Do not commit, push, open or merge a pull request, force-push, or delete branches unless the user explicitly authorizes that action.
+The user has granted standing authorization to create branches, commit, push, and open pull requests for the active story without asking each time. Still ask before force-pushing, deleting branches, merging into `main`, or rewriting history.
 
 ## Evolving this contract
 
