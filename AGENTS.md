@@ -4,15 +4,15 @@ This file is the cross-tool contract for every coding agent working in this repo
 
 ## Source of truth
 
-| Layer | Path | Responsibility |
-| --- | --- | --- |
-| Current user direction | Conversation | Current objective and explicitly approved decisions |
-| Product context | `Backlog,,userstories y contexto/Contexto_Proyecto.docx` | Product vision, scope, domain rules, and cross-cutting constraints |
-| Delivery plan | `Backlog,,userstories y contexto/Backlog.docx` | Story priority, dependencies, readiness, and global completion criteria |
-| Story specification | `Backlog,,userstories y contexto/UserStories.docx` | AG-XXX scope, acceptance criteria, and minimum validation |
-| Project contract | `AGENTS.md` | Confirmed context, precedence, workflow, and skill routing |
-| Task skills | `agent-skills/*/SKILL.md` | Detailed standards loaded only when their task applies |
-| Technical evidence | Manifests, configuration, approved ADRs, and source | Confirmed technical choices, commands, and implementation patterns |
+| Layer                  | Path                                                     | Responsibility                                                          |
+| ---------------------- | -------------------------------------------------------- | ----------------------------------------------------------------------- |
+| Current user direction | Conversation                                             | Current objective and explicitly approved decisions                     |
+| Product context        | `Backlog,,userstories y contexto/Contexto_Proyecto.docx` | Product vision, scope, domain rules, and cross-cutting constraints      |
+| Delivery plan          | `Backlog,,userstories y contexto/Backlog.docx`           | Story priority, dependencies, readiness, and global completion criteria |
+| Story specification    | `Backlog,,userstories y contexto/UserStories.docx`       | AG-XXX scope, acceptance criteria, and minimum validation               |
+| Project contract       | `AGENTS.md`                                              | Confirmed context, precedence, workflow, and skill routing              |
+| Task skills            | `agent-skills/*/SKILL.md`                                | Detailed standards loaded only when their task applies                  |
+| Technical evidence     | Manifests, configuration, approved ADRs, and source      | Confirmed technical choices, commands, and implementation patterns      |
 
 ## Precedence
 
@@ -61,15 +61,15 @@ Before creating or changing repository content:
 
 ## Skill catalog
 
-| Skill | Path | Load when |
-| --- | --- | --- |
-| `story-delivery` | `agent-skills/story-delivery/SKILL.md` | Planning, implementing, reviewing, or closing any AG-XXX story |
-| `architecture-standards` | `agent-skills/architecture-standards/SKILL.md` | Introducing modules, changing boundaries or dependency direction, or recording a technical decision |
-| `constants-standards` | `agent-skills/constants-standards/SKILL.md` | Adding values with business meaning, configuration keys, paths, limits, statuses, or messages |
-| `testing-standards` | `agent-skills/testing-standards/SKILL.md` | Adding or reviewing tests, changing important logic, or fixing a defect that needs regression coverage |
-| `multi-tenant-security` | `agent-skills/multi-tenant-security/SKILL.md` | Reading or changing teacher-owned data, authorization, files, reports, jobs, or tenant-aware persistence |
-| `internationalization-standards` | `agent-skills/internationalization-standards/SKILL.md` | Adding or changing user-visible text, errors, formatting, locale behavior, catalogs, or PDFs |
-| `remote-config-standards` | `agent-skills/remote-config-standards/SKILL.md` | Adding or changing remote parameters, flags, catalogs, publication, fallback, caching, or rollback |
+| Skill                            | Path                                                   | Load when                                                                                                |
+| -------------------------------- | ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------- |
+| `story-delivery`                 | `agent-skills/story-delivery/SKILL.md`                 | Planning, implementing, reviewing, or closing any AG-XXX story                                           |
+| `architecture-standards`         | `agent-skills/architecture-standards/SKILL.md`         | Introducing modules, changing boundaries or dependency direction, or recording a technical decision      |
+| `constants-standards`            | `agent-skills/constants-standards/SKILL.md`            | Adding values with business meaning, configuration keys, paths, limits, statuses, or messages            |
+| `testing-standards`              | `agent-skills/testing-standards/SKILL.md`              | Adding or reviewing tests, changing important logic, or fixing a defect that needs regression coverage   |
+| `multi-tenant-security`          | `agent-skills/multi-tenant-security/SKILL.md`          | Reading or changing teacher-owned data, authorization, files, reports, jobs, or tenant-aware persistence |
+| `internationalization-standards` | `agent-skills/internationalization-standards/SKILL.md` | Adding or changing user-visible text, errors, formatting, locale behavior, catalogs, or PDFs             |
+| `remote-config-standards`        | `agent-skills/remote-config-standards/SKILL.md`        | Adding or changing remote parameters, flags, catalogs, publication, fallback, caching, or rollback       |
 
 ## Working agreements
 

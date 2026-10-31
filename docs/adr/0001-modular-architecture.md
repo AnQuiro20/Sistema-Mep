@@ -12,13 +12,13 @@ AulaGestión handles personal and academic data of minors for many independent t
 
 Build a **modular monolith** inside the Next.js application. Each module owns one capability and lives in `src/modules/<module>/`.
 
-| Module | Owns | May depend on |
-| --- | --- | --- |
-| `identity` | users, auth identities, sessions, teacher context | none |
-| `academic` | years, periods, groups, subjects, students, enrollments, schedule, attendance | `identity` |
-| `evaluation` | profiles, schemes, rubrics, assessments, grades | `identity`, `academic` |
-| `reporting` | statistics, report jobs, PDFs | `identity`, `academic`, `evaluation` |
-| `billing` | subscriptions, payments, payment events | `identity` |
+| Module       | Owns                                                                          | May depend on                        |
+| ------------ | ----------------------------------------------------------------------------- | ------------------------------------ |
+| `identity`   | users, auth identities, sessions, teacher context                             | none                                 |
+| `academic`   | years, periods, groups, subjects, students, enrollments, schedule, attendance | `identity`                           |
+| `evaluation` | profiles, schemes, rubrics, assessments, grades                               | `identity`, `academic`               |
+| `reporting`  | statistics, report jobs, PDFs                                                 | `identity`, `academic`, `evaluation` |
+| `billing`    | subscriptions, payments, payment events                                       | `identity`                           |
 
 Dependencies point one way along this table. A cycle is a design error: fix ownership or extract a genuinely shared concept.
 

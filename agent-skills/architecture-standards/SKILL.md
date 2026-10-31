@@ -38,12 +38,12 @@ When no project structure exists, create only the minimum boundary needed by the
 
 Treat these as mandatory split signals for handwritten code:
 
-| Unit | Maximum |
-| --- | --- |
-| File | 150 lines |
-| Function or method | 40 lines |
-| Parameters | 4 |
-| Control-flow nesting | 3 levels |
+| Unit                 | Maximum   |
+| -------------------- | --------- |
+| File                 | 150 lines |
+| Function or method   | 40 lines  |
+| Parameters           | 4         |
+| Control-flow nesting | 3 levels  |
 
 Generated, vendored, migration-generated, and lock files are exempt. Split along responsibilities, never at an arbitrary line count.
 
