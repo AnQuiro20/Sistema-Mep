@@ -12,17 +12,26 @@
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
-    "verify": "npm run typecheck && npm run lint"
+    "verify": "npm run typecheck && npm run lint",
+    "db:up": "docker compose --env-file .env up -d postgres",
+    "db:migrate": "node --env-file-if-exists=.env ./node_modules/node-pg-migrate/bin/node-pg-migrate.js up --migrations-dir db/migrations",
+    "db:rollback": "node --env-file-if-exists=.env ./node_modules/node-pg-migrate/bin/node-pg-migrate.js down 1 --migrations-dir db/migrations",
+    "db:seed": "node --env-file-if-exists=.env db/seed.ts",
+    "test:db": "node --env-file-if-exists=.env --test db/schema.integration.test.ts"
   },
   "dependencies": {
     "next": "16.4.3",
+    "node-pg-migrate": "9.0.0",
+    "pg": "8.23.1",
     "react": "19.3.1",
     "react-dom": "19.3.1"
   },
   "devDependencies": {
     "@types/node": "26.6.6",
+    "@types/pg": "8.23.1",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
+    "embedded-postgres": "17.11.0-beta.19",
     "eslint": "10.14.0",
     "eslint-config-next": "16.4.3",
     "typescript": "6.0.3"
